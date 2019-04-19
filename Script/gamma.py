@@ -12,11 +12,12 @@ python gammma.py hogehoge.jpg(画像パス) 230(level)
 """
 if __name__ == '__main__':
     args = sys.argv
-    maxAugmenter = 3
+    maxAugmenter = 10
     minAugmenter = 0.2
-    if len(args) == 3:
+    if len(args) == 4:
         imgPath = args[1]
         level = int(args[2])
+        outputPath = args[3]
     else:
         sys.exit()
 
@@ -43,5 +44,5 @@ if __name__ == '__main__':
     draw = ImageDraw.Draw(pil_img)
     draw.text((10, 10), "level:" + str(level), color)
 
-    pil_img.save('gamma.jpg')
+    pil_img.save(outputPath)
 
